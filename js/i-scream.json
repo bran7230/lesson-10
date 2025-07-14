@@ -37,6 +37,17 @@
         "sprinkles"
       ],
       "image" : "https://bran7230.github.io/lesson-10/images/strawberry-sprinkle.svg"
+    },
+    {
+      "name" : "Green Tea Delight",
+      "calories" : 300,
+      "type" : "ice cream",
+      "ingredients" : [
+        "matcha green tea powder",
+        "sweetened condensed milk",
+        "whipped cream"
+      ],
+      "image" : "https://bran7230.github.io/lesson-10/images/ice-cream-axtra1.svg"
     }
   ]
 }
