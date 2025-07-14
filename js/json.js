@@ -60,11 +60,14 @@ function showTopFlavors(jsonObj) {
         let list = document.createElement('ul');
         let p1 = document.createElement('p');
         let p2 = document.createElement('p');
-
+        let caloriePer = topFlavors[i].calories / topFlavors[i].ingredients.length;
+        let lowCalorie = topFlavors[i].calories < 200 ? 'low calorie' : 'high calorie';
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
-        h2.textContent = topFlavors[i].name;
-        p1.textContent = `Calories: ${topFlavors[i].calories}`;
-        p2.textContent = `Type: ${topFlavors[i].type}`;
+        h2.textContent = topFlavors[i].name;        
+        p1.textContent = ` Calories: ${topFlavors[i].calories}`;
+
+
+        p2.textContent = `Type: ${topFlavors[i].type} - ${lowCalorie}`;
         img.setAttribute('src', topFlavors[i].image);
         img.setAttribute('alt', `Image of ${topFlavors[i].name}`);
        
@@ -73,7 +76,7 @@ function showTopFlavors(jsonObj) {
         for(let j = 0; j < topFlavors[i].ingredients.length; j++) {
             // add the ingredient to the UL
             let li = document.createElement('li');
-            li.textContent = `Ingredient ${j + 1}: ${topFlavors[i].ingredients[j]}`;
+            li.textContent = `Ingredient ${j + 1}: ${topFlavors[i].ingredients[j]}, Calories: ${caloriePer.toFixed(2)}`;
             list.appendChild(li);
         }
         // STEP 10h: Append each of the above HTML elements to the ARTICLE element
