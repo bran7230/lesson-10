@@ -25,6 +25,18 @@
         "clover honey"
       ],
       "image" : "https://bran7230.github.io/lesson-10/images/peach-mango.svg"
+    },
+    {
+      "name" : "Strawberry Supreme",
+      "calories" : 400,
+      "type" : "ice cream",
+      "ingredients" : [
+        "strawberry purée",
+        "vanilla ice cream",
+        "fresh strawberries",
+        "sprinkles"
+      ],
+      "image" : "https://bran7230.github.io/lesson-10/images/strawberry-sprinkle.svg"
     }
   ]
 }

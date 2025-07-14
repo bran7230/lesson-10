@@ -73,7 +73,7 @@ function showTopFlavors(jsonObj) {
         for(let j = 0; j < topFlavors[i].ingredients.length; j++) {
             // add the ingredient to the UL
             let li = document.createElement('li');
-            li.textContent = topFlavors[i].ingredients[j];
+            li.textContent = `Ingredient ${j + 1}: ${topFlavors[i].ingredients[j]}`;
             list.appendChild(li);
         }
         // STEP 10h: Append each of the above HTML elements to the ARTICLE element
