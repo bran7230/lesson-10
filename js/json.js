@@ -61,13 +61,31 @@ function showTopFlavors(jsonObj) {
         let p1 = document.createElement('p');
         let p2 = document.createElement('p');
         let caloriePer = topFlavors[i].calories / topFlavors[i].ingredients.length;
-        let lowCalorie = topFlavors[i].calories < 200 ? 'low calorie' : 'high calorie';
+        
+        let calorieThreshold;
+
+        if(topFlavors[i].type === "ice cream") {
+            calorieThreshold = 300;
+        }
+
+        else if(topFlavors[i].type === "sorbet") {
+            calorieThreshold = 200;
+        }
+
+        else if(topFlavors[i].type === "milkshake") {
+            calorieThreshold = 400;
+        }
+
+        else{
+            calorieThreshold = 250;
+        }
+        let typeInfo = topFlavors[i].calories > calorieThreshold ? "High Calorie" : "Low Calorie";
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
         h2.textContent = topFlavors[i].name;        
         p1.textContent = ` Calories: ${topFlavors[i].calories}`;
 
 
-        p2.textContent = `Type: ${topFlavors[i].type} - ${lowCalorie}`;
+        p2.textContent = `Type: ${topFlavors[i].type} - ${typeInfo}`;
         img.setAttribute('src', topFlavors[i].image);
         img.setAttribute('alt', `Image of ${topFlavors[i].name}`);
        
